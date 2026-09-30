@@ -21,6 +21,12 @@ Each skill has its own folder. Inside it:
 - `templates\` (only `project-planner` has it) holds extra files that `SKILL.md` reads. Copy this folder together with `SKILL.md`, and keep the paths the same.
 - `COMPATIBILITY.md` (where it exists) explains which parts are specific to Claude Code and what to change for another agent.
 
+`project-planner` uses a different layout: one folder per version. Each version folder is complete, and nothing is duplicated.
+
+- `project-planner\v1\` and `project-planner\v2\` each hold their own `SKILL.md`, `templates\` and `COMPATIBILITY.md`.
+- The highest number is the current version. Copy the files inside that folder (not the folder itself) into the skills folder. Claude Code keeps only the current version, directly in `project-planner\`.
+- When I improve the skill, I add a new folder with the next number, so old versions are never lost.
+
 ## How to use a skill from this folder
 
 Give the skill's folder to Claude and say: "Add this to your skill list." Claude copies it into its skills folder.
@@ -31,3 +37,4 @@ For another agent, give it the skill and the `COMPATIBILITY.md` file, and ask it
 
 - `refine` v1 — first version. Created 2026-09-30.
 - `project-planner` v1 — first version. Created 2026-09-30.
+- `project-planner` v2 — handles changes to existing plans: a `plans\` folder with one folder per plan and one folder per version, `plans\index.md` and `plans\track.md`, a start question (continue, new version, or new plan), self-contained new versions that take context from old ones, "Previous plans" and "Starting point" sections, user or agent steps, a stricter handoff prompt, experiments during planning, and old-style plans moved only with permission. Created 2026-09-30.
