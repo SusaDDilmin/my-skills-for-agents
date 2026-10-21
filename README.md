@@ -11,6 +11,7 @@ This folder is a record of the skills I have created for AI agents. It is a back
 | --- | --- | --- |
 | `refine` | When I turn it on in a chat, the agent says back what I asked and checks that it understood me. Then it lists everything I may have forgotten, so I can choose what to add before any work starts. It helps me improve my prompts. | `refine\` |
 | `project-planner` | A planning partner for anything: an app, a study timetable, a presentation. I discuss my plan with the agent. It asks a few questions at a time, gives options with reasons, and warns me if a choice may cause a problem. I make every decision. It saves only what we both agree on into plan files, so I end up with a complete plan and one short prompt to build it step by step. | `project-planner\` |
+| `coding-partner` | A coding partner for building a feature/file/component at a time in any codebase, while I learn how it's done. No fixed steps — it proposes options for what to do next, I decide, and every piece of code is shown in the chat before it's ever applied. It never writes or changes a file unless I tell it to, and it keeps a small notes file per project so a new chat can pick up where I left off. | `coding-partner\` |
 
 ## How this folder is organized
 
@@ -38,3 +39,4 @@ For another agent, give it the skill and the `COMPATIBILITY.md` file, and ask it
 - `refine` v1 — first version. Created 2026-09-30.
 - `project-planner` v1 — first version. Created 2026-09-30.
 - `project-planner` v2 — handles changes to existing plans: a `plans\` folder with one folder per plan and one folder per version, `plans\index.md` and `plans\track.md`, a start question (continue, new version, or new plan), self-contained new versions that take context from old ones, "Previous plans" and "Starting point" sections, user or agent steps, a stricter handoff prompt, experiments during planning, and old-style plans moved only with permission. Created 2026-09-30.
+- `coding-partner` v1 — first version. A collaborative, step-by-step coding mode: no fixed pipeline (structure, scaffolding, planning, writing code, and fixing bugs are all just kinds of decisions, not ordered phases), the agent always proposes options and the user decides, every piece of code is shown in chat before being applied, files are only written when explicitly told to, and a per-project `.coding-partner/notes.md` (created lazily, deleted only on request) lets a new chat resume. Created 2026-10-21.
